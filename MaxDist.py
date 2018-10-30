@@ -1,9 +1,6 @@
 # import operator
 import random
 import matplotlib.pyplot
-import time
-
-start = time.clock()
 
 def distance_between(agents_row_a, agents_row_b):
     return (((agents_row_a[0] - agents_row_b[0])**2) + ((agents_row_a[1] - agents_row_b[1])**2))**0.5
@@ -40,20 +37,14 @@ for i in range(num_of_agents):
 matplotlib.pyplot.show()
 
 
-distance = distance_between(agents[0], agents[9])
-print(distance)
 
-maxdistance = 0
+mindistance = 0
 
 for i in range(num_of_agents):
     for j in range(num_of_agents):
         if (i > j):
             distance = distance_between(agents[i], agents[j])
             print("distance",distance)
-            if (distance > maxdistance):
-                maxdistance = distance
-            print("maxdistance",maxdistance)
-            
-end = time.clock()
-
-print("time = " + str(end - start))
+            if (distance > mindistance):
+                mindistance = distance
+            print("mindistance",mindistance)
