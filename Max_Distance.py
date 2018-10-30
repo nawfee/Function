@@ -36,5 +36,12 @@ for i in range(num_of_agents):
  matplotlib.pyplot.scatter(agents[i][1],agents[i][0])
 matplotlib.pyplot.show()
 
+
 distance = distance_between(agents[0], agents[9])
 print(distance)
+
+for i in range(num_of_agents):
+    for j in range(num_of_agents):
+        if (agents[i] != agents[j]):
+            distance = distance_between(agents[i], agents[j])
+            print(distance)
