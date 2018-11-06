@@ -1,7 +1,9 @@
 # import operator
 import random
 import matplotlib.pyplot
+import time
 
+start = time.clock()
 def distance_between(agents_row_a, agents_row_b):
     return (((agents_row_a[0] - agents_row_b[0])**2) + ((agents_row_a[1] - agents_row_b[1])**2))**0.5
    
@@ -36,15 +38,9 @@ for i in range(num_of_agents):
  matplotlib.pyplot.scatter(agents[i][1],agents[i][0])
 matplotlib.pyplot.show()
 
+distance = distance_between(agents[0], agents[1])
+print(distance)
 
+end = time.clock()
 
-mindistance = 0
-
-for i in range(num_of_agents):
-    for j in range(num_of_agents):
-        if (i > j):
-            distance = distance_between(agents[i], agents[j])
-            print("distance",distance)
-            if (distance <  mindistance):
-                mindistance = distance
-            print("mindistance",mindistance)
+print("time = " + str(end - start))

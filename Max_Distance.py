@@ -40,8 +40,26 @@ matplotlib.pyplot.show()
 distance = distance_between(agents[0], agents[9])
 print(distance)
 
+max_distance = 0
+'''
 for i in range(num_of_agents):
     for j in range(num_of_agents):
-        if (agents[i] != agents[j]):
+        if (i > j):
+            print (i, j)
             distance = distance_between(agents[i], agents[j])
-            print(distance)
+            print("distance",distance)
+            if (distance > max_distance):
+                max_distance = distance
+                print("max_distance", max_distance)
+'''
+for i in range(0, num_of_agents):
+    for j in range(i, num_of_agents):
+        #if (i > j):
+        print (i, j)
+            #distance = distance_between(agents[i], agents[j])
+            #print("distance",distance)
+            #if (distance > max_distance):
+            #    max_distance = distance
+            #    print("max_distance", max_distance)
+
+print("max_distance", max_distance)
